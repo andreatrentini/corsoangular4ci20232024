@@ -1,0 +1,6 @@
+<p>Inserisci il nome del laboratorio:
+    <input type="text" [(ngModel)]="nomeLaboratorio">
+</p>
+<p [style.color]="coloreStudenti">Sono presenti {{nrStudenti}} studenti nel laboratorio {{nomeLaboratorio}}.</p>
+<p [style.color]="coloreInsegnanti">Sono presenti {{nrInsegnanti}} insegnanti.</p>
+<button (click)="fermaUscita()">Ferma uscita studenti</button>
