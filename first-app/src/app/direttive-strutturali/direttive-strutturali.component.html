@@ -1,0 +1,37 @@
+<h1>Direttive strutturali</h1>
+<p><input type=text #nuovoMessaggio><button (click)="aggiungiMessaggio(nuovoMessaggio)">Aggiungi</button></p>
+
+<ul>
+    <li *ngFor="let msg of messaggi">{{msg}}</li>
+</ul>
+
+<table border="1" *ngIf="messaggi.length > 0; else noMessaggi">
+    <tr>
+        <th>id</th>
+        <th>messaggio</th>
+        <th>action</th>
+    </tr>
+    <tr *ngFor="let messaggio of messaggi; let i = index">
+        <td>{{i + 1}}</td>
+        <td>{{messaggio}}</td>
+        <td><button (click)="eliminaMessaggio(i)">Elimina</button></td>
+    </tr>
+</table>
+
+<table border="1" *ngIf="messaggiEliminati.length > 0; else noMessaggi">
+    <tr>
+        <th>id</th>
+        <th>messaggio</th>
+        <th>action</th>
+    </tr>
+    <tr *ngFor="let messaggio of messaggiEliminati; let i = index">
+        <td>{{i + 1}}</td>
+        <td>{{messaggio}}</td>
+        <td><button (click)="ripristinaMessaggio(i)">Ripristina</button></td>
+    </tr>
+</table>
+
+
+<ng-template #noMessaggi>
+    <p>Non ci sono messaggi da leggere.</p>
+</ng-template>

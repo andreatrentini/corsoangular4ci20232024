@@ -1,0 +1,6 @@
+<h2>Elenco messaggi child</h2>
+<ul>
+    <li *ngFor="let messaggio of messaggiDaVisualizzare; let i=index">{{messaggio}}
+        <button (click)="elimina(i)">Elimina</button>
+    </li>
+</ul>
