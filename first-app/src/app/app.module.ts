@@ -9,6 +9,11 @@ import { ParentComponent } from './parent-child-comunication/parent/parent.compo
 import { InChildComponent } from './parent-child-comunication/in-child/in-child.component';
 import { OutChildComponent } from './parent-child-comunication/out-child/out-child.component';
 import { RipassoComponent } from './ripasso/ripasso.component';
+import { StudentiContainerComponent } from './studenti-service/studenti-container/studenti-container.component';
+import { StudentiFormComponent } from './studenti-service/studenti-form/studenti-form.component';
+import { StudentiTableComponent } from './studenti-service/studenti-table/studenti-table.component';
+import { ObserversContainerComponent } from './observables/observers-container/observers-container.component';
+import { ObserverComponent } from './observables/observer/observer.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +23,12 @@ import { RipassoComponent } from './ripasso/ripasso.component';
     ParentComponent,
     InChildComponent,
     OutChildComponent,
-    RipassoComponent
+    RipassoComponent,
+    StudentiContainerComponent,
+    StudentiFormComponent,
+    StudentiTableComponent,
+    ObserversContainerComponent,
+    ObserverComponent
   ],
   imports: [
     BrowserModule,

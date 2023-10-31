@@ -1,0 +1,17 @@
+<h2>Elenco studenti</h2>
+<table border="1">
+    <tr>
+        <th>#</th>
+        <th>Nome</th>
+        <th>Cognome</th>
+        <th>Classe</th>
+        <th></th>
+    </tr>
+    <tr *ngFor="let studente of studentiDaVisualizzare; let i = index">
+        <th>{{i}}</th>
+        <td>{{studente.nome}}</td>
+        <td>{{studente.cognome}}</td>
+        <td>{{studente.classe}}</td>
+        <td><button (click)="elimina(i)">Elimina</button></td>
+    </tr>
+</table>
