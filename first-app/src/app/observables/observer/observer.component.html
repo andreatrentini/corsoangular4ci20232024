@@ -1,7 +1,19 @@
 <h2>Observer</h2>
-<p><button (click)="iniziaAdOsservare()">Osserva</button></p>
+<p>{{messaggio}}</p>
+<p>
+    <button (click)="iniziaAdOsservare()">Osserva</button>
+    <button (click)="nonOsservarePiu()">Ferma</button>
+</p>
 <div>
+    <p>Numeri corretti</p>
     <ul>
         <li *ngFor="let numero of numeri">{{numero}}</li>
+    </ul>
+</div>
+
+<div>
+    <p>Numeri sbagliati</p>
+    <ul>
+        <li *ngFor="let numero of numeriSbagliati">{{numero}}</li>
     </ul>
 </div>
