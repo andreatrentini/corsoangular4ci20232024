@@ -1,1 +1,8 @@
-<p>subject-receiver-b works!</p>
+<h2>Receiver B</h2>
+<button (click)="visualizzaTuttiILog()">Visualizza tutti i log</button>
+<p>{{messaggioLog}}</p>
+<div>
+    <ul>
+        <li *ngFor="let messaggio of messaggi">{{messaggio.toString}}</li>
+    </ul>
+</div>

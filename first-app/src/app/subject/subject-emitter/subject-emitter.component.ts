@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { LogService } from '../log.service';
 
 @Component({
   selector: 'app-subject-emitter',
@@ -6,5 +7,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./subject-emitter.component.css']
 })
 export class SubjectEmitterComponent {
+
+  // Dependency injection
+  constructor(private logService: LogService) {}
+
+  registraLog(messaggio: string) {
+    this.logService.registra(messaggio);
+  }
 
 }
