@@ -14,4 +14,24 @@
 ```
 npm install -g @angular/cli
 ```
-> per aggiornare npm: `npm install -g npm@10.1.0`
+3. Creare l'applicazione
+```
+ng new nome_applicazione
+```
+> NB: Con angular 17 le applicazioni sono per default STAND ALONE
+
+## Applicazione
+Entrare nella directory dell'applicazione:
+```
+cd nome_directory 
+```
+
+Per creare un nuovo componente:
+```
+ng generate component nome _componente --skip-tests
+```
+
+Per creare un nuovo servizio:
+```
+ng generate service nome _servizio --skip-tests
+```
