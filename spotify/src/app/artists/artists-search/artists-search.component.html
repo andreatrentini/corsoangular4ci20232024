@@ -1,0 +1,10 @@
+<!-- Container crea un div con margini centrati a dx e a sinistra
+#artistname è il bookmark assegnato all'elemento input. Verrà usato con l'event binding del bottone (click) -->
+
+<div class="container mt-5">
+    <div class="input-group mb-3">
+        <input type="text" class="form-control" placeholder="Artist name..." aria-label="Artist name..."
+            aria-describedby="button-addon2" #artistname>
+        <button class="btn btn-outline-secondary" type="button" (click)="searchArtist(artistname)">Search</button>
+    </div>
+</div>

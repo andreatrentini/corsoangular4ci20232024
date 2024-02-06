@@ -1,0 +1,11 @@
+<div class="container mt-5">
+    <div class="row">
+        @for(artist of artists; track artists) {
+            @if(artist.images.length > 0) {
+                <div class="col-md-6 col-lg-4 mt-3">
+                    <app-artist-card [artist]="artist"></app-artist-card>
+                </div>
+            }
+        }
+    </div>
+</div>

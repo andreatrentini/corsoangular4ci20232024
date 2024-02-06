@@ -1,0 +1,11 @@
+<header class="container p-5">
+    <h1 class="display-2">
+        Artists
+    </h1>
+</header>
+<div class="container">
+    <app-artists-search (onSearchArtist)="searchArtist($event)"></app-artists-search>
+</div>
+<div class="container">
+    <app-artists-grid [artists]="artists"></app-artists-grid>
+</div>

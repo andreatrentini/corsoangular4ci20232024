@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { SpotifyService } from '../spotify.service';
+import { ArtistsComponent } from '../artists/artists.component';
 
 @Component({
   selector: 'app-main',
   standalone: true,
-  imports: [],
+  imports: [ArtistsComponent],
   templateUrl: './main.component.html',
   styleUrl: './main.component.css'
 })
