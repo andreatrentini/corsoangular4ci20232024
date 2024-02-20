@@ -1,1 +1,24 @@
-<app-artists></app-artists>
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <a class="navbar-brand" routerLink="">Spotify APP</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" routerLink="">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['artists']">Artists</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="credits">Credits</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+<!-- Il tag router-outlet mi consente di visualizzare un componente diverso
+per le varie routes definite -->
+<router-outlet></router-outlet>

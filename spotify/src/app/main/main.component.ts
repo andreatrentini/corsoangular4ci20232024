@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { SpotifyService } from '../spotify.service';
-import { ArtistsComponent } from '../artists/artists.component';
+import { RouterLink, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-main',
   standalone: true,
-  imports: [ArtistsComponent],
+  // Importante: devo importare RouterOutlet per attivare le routes definite
+  imports: [RouterOutlet, RouterLink],
   templateUrl: './main.component.html',
   styleUrl: './main.component.css'
 })

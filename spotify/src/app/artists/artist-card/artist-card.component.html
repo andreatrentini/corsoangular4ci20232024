@@ -3,6 +3,6 @@
     <div class="card-body">
         <h5 class="card-title">{{artist.name}}</h5>
         <p class="card-text">Genres: {{artist.genres}}, Followers: {{artist.followers.total}}</p>
-        <a href="#" class="btn btn-primary">Albums</a>
+        <button class="btn btn-primary" (click)="visualizzaAlbums(artist.id)">Albums</button>
     </div>
 </div>

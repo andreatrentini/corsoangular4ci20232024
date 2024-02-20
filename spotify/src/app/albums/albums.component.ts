@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-albums',
@@ -7,6 +8,12 @@ import { Component } from '@angular/core';
   templateUrl: './albums.component.html',
   styleUrl: './albums.component.css'
 })
-export class AlbumsComponent {
+export class AlbumsComponent implements OnInit {
+
+  constructor(private activatedRoute: ActivatedRoute) {}
+
+  ngOnInit(): void {
+    console.log(this.activatedRoute.snapshot)
+  }
 
 }
