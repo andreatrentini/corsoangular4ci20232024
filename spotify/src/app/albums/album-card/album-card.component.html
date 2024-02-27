@@ -1,1 +1,8 @@
-<p>album-card works!</p>
+<div class="card">
+    <img [src]="album.images[1].url" class="card-img-top" alt="album.name">
+    <div class="card-body">
+        <h5 class="card-title">{{album.name}}</h5>
+        <p class="card-text">Release date: {{album.release_date}}, Tracks number: {{album.total_tracks}}</p>
+        <button class="btn btn-primary">Tracks</button>
+    </div>
+</div>

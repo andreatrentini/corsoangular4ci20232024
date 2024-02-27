@@ -1,1 +1,11 @@
-<p>albums-grid works!</p>
+<div class="container mt-5">
+    <div class="row">
+        @for(album of albums; track albums) {
+            @if(album.images.length > 0) {
+                <div class="col-md-6 col-lg-4 mt-3">
+                    <app-album-card [album]="album"></app-album-card>
+                </div>
+            }
+        }
+    </div>
+</div>

@@ -1,2 +1,21 @@
-<p>albums works!</p>
-<a [routerLink]="['/albums', '123456789']">Albums altro artista</a>
+<header class="container p-5">
+    @if(inAttesaDati) {
+    <div class="d-flex align-items-center">
+        <strong role="status">Loading...</strong>
+        <div class="spinner-border ms-auto" aria-hidden="true"></div>
+    </div>
+    }
+    @else {
+        @if(artistName) {
+            <h1 class="display-2">
+                {{artistName}}
+            </h1>
+            }
+            @else {
+            <h2 class="display-4">Nessun album trovato.</h2>
+            }
+    }
+</header>
+<div class="container">
+    <app-albums-grid [albums]="albums"></app-albums-grid>
+</div>

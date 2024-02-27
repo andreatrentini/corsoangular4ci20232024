@@ -1,19 +1,24 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, RouterLink } from '@angular/router';
-import { Subscription } from 'rxjs';
+import { Subscription, timer } from 'rxjs';
 import { SpotifyService } from '../spotify.service';
+import { AlbumsGridComponent } from './albums-grid/albums-grid.component';
 
 @Component({
   selector: 'app-albums',
   standalone: true,
-  imports: [RouterLink],
+  imports: [RouterLink, AlbumsGridComponent],
   templateUrl: './albums.component.html',
   styleUrl: './albums.component.css'
 })
 export class AlbumsComponent implements OnInit, OnDestroy {
 
+  // Importante: solo le proprietà (o attributi) definite nella classe del componente
+  // Possono essere usate nel file (template) HTML
   artistsId!: string;
   albums: any;
+  artistName!: string;
+  inAttesaDati: boolean = true;
 
   // L'oggetto di tipo subscription (abbonamento) mi consente di gestire il subscribe su un observable
   // E' importante eseguire sempre l'unsubscribe prima di uscire dal componente
@@ -38,7 +43,16 @@ export class AlbumsComponent implements OnInit, OnDestroy {
         // E' arrivata la risposa dalla API di spotify
         // La risposta è contenuta nella variabile data
         // memorizzo l'array items (contiene l'array degli album) nella proprietà albums
-        this.albums = data.items;
+        timer(3000).subscribe(() => {
+          if (data.items.length > 0) {
+            this.albums = data.items;
+            if (this.albums[0].artists.length > 0) {
+              this.artistName = this.albums[0].artists[0].name;
+              this.inAttesaDati = false;
+            }
+          }
+        });
+        
         console.log(data);
       })
     })
