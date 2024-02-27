@@ -4,6 +4,7 @@ import { CreditsComponent } from './credits/credits.component';
 import { ArtistsComponent } from './artists/artists.component';
 import { AlbumsComponent } from './albums/albums.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { LoginComponent } from './login/login.component';
 
 // L'oggetto routes definisce i percorsi (parte finale della url dell'applicazione)
 // gestiti dalla nostra app.
@@ -15,6 +16,7 @@ export const routes: Routes = [
     {path: 'credits', component: CreditsComponent},
     {path: 'artists', component: ArtistsComponent},
     {path: 'albums/:id', component: AlbumsComponent},
+    {path: 'login', component: LoginComponent},
     // Con ** gestisco tutti i percorsi diversi da quelli elencati prima
     {path: '**', component: NotFoundComponent}
 ];
