@@ -105,7 +105,8 @@ export class SpotifyService {
     --header 'Authorization: Bearer 1POdFZRZbvb...qqillRxMr2z'
     */
 
-    let url = 'https://api.spotify.com/v1/artists/' + artistId + '/albums';
+    //let url = 'https://api.spotify.com/v1/artists/' + artistId + '/albums';
+    let url = `https://api.spotify.com/v1/artists/${artistId}/albums`
 
     // Imposto la header usando il token bearer precedentemente ottenuto
     let header = new HttpHeaders()

@@ -1,0 +1,15 @@
+POST https://accounts.spotify.com/api/token
+Content-Type: application/x-www-form-urlencoded
+
+grant_type=client_credentials&client_id=22bf3bb4da0a43ce8d1e3578b5e7ecdb&client_secret=b976a211d2064281944d5feeb9e29de1
+###
+
+GET https://api.spotify.com/v1/search?q=VASCO&type=artist
+Authorization: Bearer BQA0lXspWehjQ3_C_oG3ZU4cLxVP2NYCCC1bffjO_w0GU4rueeGvu0NJj2UoqP3zJmarZTmW_gryA09nmaNEC5L3vKdc2t01PHyBbgKwT2AH71l8gSA
+###
+
+GET https://api.spotify.com/v1/artists/51Blml2LZPmy7TTiAg47vQ/albums
+Authorization: Bearer BQA0lXspWehjQ3_C_oG3ZU4cLxVP2NYCCC1bffjO_w0GU4rueeGvu0NJj2UoqP3zJmarZTmW_gryA09nmaNEC5L3vKdc2t01PHyBbgKwT2AH71l8gSA
+###
+
+
