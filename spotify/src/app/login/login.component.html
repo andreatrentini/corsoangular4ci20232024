@@ -1,14 +1,22 @@
 <div class="container mt-5">
+    <!-- Attenzione ad inserire nel tag form la proprietà [formGroup]="nome di fomrgroup definito
+        in typescript" -->
     <form class="needs-validation" [formGroup]="loginForm">
         <div class="mb-3 col">
             <label for="inputUsername" class="form-label">Username</label>
+            <!-- Nel controllo occorre speficare formControlName=nome del controllo typescript -->
             <input type="email" class="form-control" placeholder="insert your email..."
+            [class.is-invalid]="!loginForm.controls['username'].valid && 
+            loginForm.controls['username'].touched"
+            [class.is-valid]="loginForm.controls['username'].valid"
             autocomplete="email" #inputUsername formControlName="username">
             <div class="invalid-feedback">Username is required and must be an email address.</div>
         </div>
         <div class="mb-3 col">
             <label for="inputPassword" class="form-label">Password</label>
             <input type="password" class="form-control" 
+            [class.is-invalid]="!loginForm.controls['password'].valid && 
+            loginForm.controls['password'].touched"
             autocomplete="current-password" formControlName="password">
             <div class="invalid-feedback">Password cannot be empty.</div>
         </div>
