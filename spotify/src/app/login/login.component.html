@@ -1,6 +1,11 @@
 <div class="container mt-5">
     <!-- Attenzione ad inserire nel tag form la proprietà [formGroup]="nome di fomrgroup definito
         in typescript" -->
+    @if(errorMessage) {
+        <div class="alert alert-danger m-5" role="alert">
+            {{errorMessage}}
+        </div>
+    }
     <form class="needs-validation" [formGroup]="loginForm">
         <div class="mb-3 col">
             <label for="inputUsername" class="form-label">Username</label>
@@ -23,7 +28,7 @@
         <div class="row justify-content-center mt-5">
             <div class="col-sm-3 mt-3">
                 <button type="button" class="btn btn-primary btn-block form-control" 
-                [disabled]="!loginForm.valid">Login</button>
+                [disabled]="!loginForm.valid" (click)="login()">Login</button>
             </div>
             <div class="col-sm-3 mt-3">
                 <button type="button" class="btn btn-secondary btn-block form-control">Cancel</button>
