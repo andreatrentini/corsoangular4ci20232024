@@ -48,4 +48,8 @@ export class AuthService {
     this.isLoggedIn = false;
     this.loggedIn.next(false);
   }
+
+  get IsLoggedIn(): boolean {
+    return this.isLoggedIn;
+  }
 }

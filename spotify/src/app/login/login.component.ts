@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { AuthService } from '../auth.service';
 import { Subscription, timer } from 'rxjs';
@@ -13,7 +13,7 @@ import { ThisReceiver } from '@angular/compiler';
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent implements OnInit, OnDestroy {
   // Eventuale messaggio di errore
   errorMessage: string = '';
   // Observable per controllare se il mio servizio auth mi manda un errore
@@ -27,6 +27,11 @@ export class LoginComponent implements OnInit {
         this.errorMessage = '';
       })
     })
+  }
+
+  ngOnDestroy(): void {
+    // Ricordarsi di effettuare sempre unsubscribe di un observable!!!
+    this.errorObs.unsubscribe();
   }
 
   login():void {
